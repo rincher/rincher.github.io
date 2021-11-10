@@ -10,6 +10,19 @@
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
     <link rel="shortcut icon" href="favicon.ico"> 
     <script src = "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script> 
+    $(document).ready( 
+        function lolchamp(){
+            $.ajax({
+                type:"Get",
+                url:"http://localhost:8080/riot/freeChamp",
+                success : function(response){
+                    console.log(response);
+                }
+            })
+        }
+    );
+    </script>
     <script src="/assets/js/blog.js"></script>
     <!-- FontAwesome JS-->
 	<script defer src="assets/fontawesome/js/all.min.js"></script>
