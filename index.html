@@ -20,10 +20,19 @@
                     type: "Get",
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
-                        console.log(response);
+                        for (i = 0; i < response.length; i++){
+                            let champion = response[i];
+                            addHTML(champion);
+                        }
                     },
                 });
             });
+            function addHTML(champion){
+                let temp_html  = `<tr>
+                    <td> ${champion} </td>
+                    </tr>`;
+                $('#lolchamp').append(temp_html);
+            }
         </script>
         <script src="/assets/js/blog.js"></script>
         <!-- FontAwesome JS-->
@@ -176,6 +185,7 @@
                                 <span class="lolchamp" , id="lolchamp"></span>
                             </div>
                         </div>
+                        <!-- Default -->
                         <div class="row g-3 g-xl-0">
                             <div class="col-2 col-xl-3">
                                 <img
