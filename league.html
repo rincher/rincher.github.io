@@ -13,10 +13,20 @@
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
                         console.log(response);
+                        for (i = 0; i < response.length; i++) {
+                            let champion = response[i];
+                            let temp = addHtml(champion);
+                        }
                     },
                 });
             });
+
+            function addHtml(champion){
+                $('#champList').append(champion);
+            }
         </script>
     </head>
-    <body></body>
+    <body>
+        <p id = champList></span>
+    </body>
 </html>
