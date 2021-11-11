@@ -7,15 +7,14 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            $(document).ready(
-            function lolfreechamp(){
+            $(function lolfreechamp() {
                 $.ajax({
-                    type:"GET",
+                    type: "GET",
                     url: "http://localhost:8080/riot/freechamp",
-                    success : function(response){
+                    success: function (response) {
                         console.log(response);
-                    }
-                })
+                    },
+                });
             });
         </script>
     </head>
