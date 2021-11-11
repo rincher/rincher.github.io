@@ -9,31 +9,6 @@
         <meta name="description" content="Blog Template" />
         <meta name="author" content="Xiaoying Riley at 3rd Wave Media" />
         <link rel="shortcut icon" href="favicon.ico" />
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"
-        ></script>
-        <script>
-            $(document).ready(function lolchamp() {
-                $.ajax({
-                    type: "Get",
-                    url: "http://localhost:8080/riot/freechamp",
-                    success: function (response) {
-                        for (i = 0; i < response.length; i++){
-                            let champion = response[i];
-                            addHTML(champion);
-                        }
-                    },
-                });
-            });
-            function addHTML(champion){
-                let temp_html  = `<tr>
-                    <td> ${champion} </td>
-                    </tr>`;
-                $('#lolchamp').append(temp_html);
-            }
-        </script>
         <script src="/assets/js/blog.js"></script>
         <!-- FontAwesome JS-->
         <script defer src="assets/fontawesome/js/all.min.js"></script>
@@ -182,8 +157,16 @@
                         <!-- lolchamp -->
                         <div class="row g-3 g-xl-0">
                             <div class="col-2 col-xl-3">
-                                <span class="lolchamp" , id="lolchamp"></span>
+                                <img
+                                    class="img-fluid post-thumb"
+                                    src="https://www.riotgames.com/darkroom/800/9c08e3b3ce6281f252a4dfbf61357a11:75ab7e60b85225c6c7f19ae4024e27a6/lol-logo-rendered-hi-res.png"
+                                    alt="image"
+                                />
                             </div>
+                            <div class="col">
+                                <h3 class="title mb-1">
+                                    <a class = "text-link" href="league.html"> League of Legend Post</a>
+                                </h3>
                         </div>
                         <!-- Default -->
                         <div class="row g-3 g-xl-0">
