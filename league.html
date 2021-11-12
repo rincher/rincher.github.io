@@ -20,6 +20,7 @@
                     type: "GET",
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
+                        $('#league').empty();
                         for (i = 0; i < response.length; i++) {
                             let championName = response[i][0];
                             let championImg = response[i][1];
@@ -30,7 +31,6 @@
             });
 
             function addHtml(championName, championImg) {
-                $('#league').empty();
                 let temp_html = `<img src = ${championImg} class = "card-img-top"> 
                                 <div class = card-box"">
                                 <p class = "card-text">${championName}</p></div>`;
