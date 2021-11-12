@@ -15,20 +15,22 @@
                         for (i = 0; i < response.length; i++) {
                             let championName = response[i][0];
                             let championImg = response[i][1];
-                            addHtml(championName,championImg);
+                            addHtml(championName, championImg);
                         }
                     },
                 });
             });
 
-            function addHtml(championName,championImg) {
-                let temp_html = `<tr><td><img src = ${championImg}> <p>${championName}</p></td></tr>`;
+            function addHtml(championName, championImg) {
+                let temp_html = `<td><img src = ${championImg}> <p>${championName}</p></td>`;
                 $("#league").append(temp_html);
             }
         </script>
     </head>
     <body>
         <h3>This Weeks Free Champion Rotation</h3>
-        <div id="league"></div>
+        <div>
+            <tr id = "league"></tr>
+        </div>
     </body>
 </html>
