@@ -22,8 +22,8 @@
             });
 
             function addHtml(champion){
-                let championName = response[0][i];
-                let championImg = response[1][i];
+                let championName = champion[0][i];
+                let championImg = champion[1][i];
                 let temp_html = `<img src = ${championImg}> <p>${championName}</p>`
                 $('#league').append(temp_html);
             }
