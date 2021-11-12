@@ -31,9 +31,12 @@
             });
 
             function addHtml(championName, championImg) {
-                let temp_html = `<img src = ${championImg} class = "card-img-top"> 
-                                <div class = card-box"">
-                                <p class = "card-text">${championName}</p></div>`;
+                let temp_html = `<div class="card" style="width: 9rem">
+                                    <img src = ${championImg} class = "card-img-top"> 
+                                    <div class = card-box"">
+                                        <p class = "card-text">${championName}</p>
+                                    </div>
+                                </div>`;
                 $("#league").append(temp_html);
             }
         </script>
@@ -41,14 +44,15 @@
     </head>
     <body>
         <h3>This Week's Free Champion Rotation</h3>
-
-        <div class="card" style="width: 9rem" id="league">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                </p>
+        <div id="league">
+            <div class="card" style="width: 9rem">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make
+                        up the bulk of the card's content.
+                    </p>
+                </div>
             </div>
         </div>
     </body>
