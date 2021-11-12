@@ -12,9 +12,9 @@
                     type: "GET",
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
-                        console.log(response);
                         for (i = 0; i < response.length; i++) {
                             let champion = response[i];
+                            console.log(champion);
                             addHtml(champion);
                         }
                     },
@@ -22,12 +22,13 @@
             });
 
             function addHtml(champion){
-                let temp_html = `<img src = ${champion}>`
+                let temp_html = `<img src = ${champion}> <p>champion</p>`
                 $('#league').append(temp_html);
             }
         </script>
     </head>
     <body>
+        <h3>This Weeks Free Champion Rotation</h3>
         <div id = "league">
 
         </div>
