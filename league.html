@@ -15,18 +15,21 @@
                         console.log(response);
                         for (i = 0; i < response.length; i++) {
                             let champion = response[i];
-                            let temp = addHtml(champion);
+                            addHtml(champion);
                         }
                     },
                 });
             });
 
             function addHtml(champion){
-                $('#champList').append(champion);
+                let temp_html = `<img src = ${champion}>`
+                $('#league').append(temp_html);
             }
         </script>
     </head>
     <body>
-        <p id = champList></span>
+        <div id = "league">
+
+        </div>
     </body>
 </html>
