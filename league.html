@@ -20,7 +20,7 @@
                     type: "GET",
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
-                        $('#league').empty();
+                        $("#league").empty();
                         for (i = 0; i < response.length; i++) {
                             let championName = response[i][0];
                             let championImg = response[i][1];
@@ -44,15 +44,7 @@
     </head>
     <body>
         <h3>This Week's Free Champion Rotation</h3>
-        <div id="league">
-            <div class="card" style="width: 9rem">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make
-                        up the bulk of the card's content.
-                    </p>
-                </div>
+        <div class="card-group" id="league">
             </div>
         </div>
     </body>
