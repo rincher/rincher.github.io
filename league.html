@@ -13,26 +13,23 @@
                     url: "http://localhost:8080/riot/freechamp",
                     success: function (response) {
                         for (i = 0; i < response.length; i++) {
-                            let champion = response[i];
+                            let championName = response[i][0];
+                            let championImg = response[i][1];
                             console.log(champion);
-                            addHtml(champion);
+                            addHtml(championName,championImg);
                         }
                     },
                 });
             });
 
-            function addHtml(champion){
-                let championName = champion[0][i];
-                let championImg = champion[1][i];
-                let temp_html = `<img src = ${championImg}> <p>${championName}</p>`
-                $('#league').append(temp_html);
+            function addHtml(championName,championImg) {
+                let temp_html = `<img src = ${championImg}> <p>${championName}</p>`;
+                $("#league").append(temp_html);
             }
         </script>
     </head>
     <body>
         <h3>This Weeks Free Champion Rotation</h3>
-        <div id = "league">
-
-        </div>
+        <div id="league"></div>
     </body>
 </html>
