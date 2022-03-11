@@ -10,7 +10,7 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            $(function gatcha(){
+            function gatcha(){
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/new",
@@ -25,7 +25,6 @@
                     }
                 })
             }
-            )
         </script>
     </head>
     <body>
