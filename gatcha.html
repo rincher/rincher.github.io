@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css" />
+
+        <!-- Jquery CDN -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(function gatcha(){
+                $.ajax({
+                    type : Get,
+                    url : "http://localhost:8080/gatcha/new",
+                    data : {
+                        "userName" : "lacvner",
+                        "gameName" : "로아",
+                        "moneySpent" : 1000000
+                    },
+                    success: function (response){
+                        
+                    }
+                })
+            }
+            )
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
