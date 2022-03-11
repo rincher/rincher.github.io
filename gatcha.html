@@ -19,11 +19,11 @@
                     url : "http://localhost:8080/gatcha/new",
                     contentType : "application/json",
                     dataType : "json",
-                    data : {
+                    data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
                         moneySpent : moneyspent
-                    },
+                    }),
                     success: function (response){
                         $("#result").empty();
                         console.log(response);
