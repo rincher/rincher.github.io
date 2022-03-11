@@ -15,9 +15,9 @@
                     type : "POST",
                     url : "http://localhost:8080/gatcha/new",
                     data : {
-                        "userName" : $("#userName"),
-                        "gameName" : $("#gameName"),
-                        "moneySpent" : $("#moneySpent")
+                        "userName" : document.getElementById("userName"),
+                        "gameName" : document.getElementsById("gameName"),
+                        "moneySpent" : document.getElementById("moneySpent")
                     },
                     success: function (response){
                         $("#result").empty();
