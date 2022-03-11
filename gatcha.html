@@ -12,7 +12,7 @@
         <script>
             $(function gatcha(){
                 $.ajax({
-                    type : Get,
+                    type : "POST",
                     url : "http://localhost:8080/gatcha/new",
                     data : {
                         "userName" : "lacvner",
@@ -20,7 +20,7 @@
                         "moneySpent" : 1000000
                     },
                     success: function (response){
-                        
+
                     }
                 })
             }
@@ -28,6 +28,9 @@
         </script>
     </head>
     <body>
-        
+        <h1> test </h1>
+        <input type="text" id="userName">
+        <input type="text" id="gameName">
+        <input type="number" id="moneySpent">
     </body>
 </html>
