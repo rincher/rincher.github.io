@@ -11,16 +11,18 @@
         ></script>
         <script>
             function gatcha(){
-                let userName = $("#userName").val()
-                let gameName = $("#gameName").val()
-                let moneySpent = $("#moneySpent").val()
+                let username = $("#userName").val()
+                let gamename = $("#gameName").val()
+                let moneyspent = $("#moneySpent").val()
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/new",
+                    contentType : "application/json",
+                    dataType : "json",
                     data : {
-                        userName : userName,
-                        gameName : gameName,
-                        moneySpent : moneySpent
+                        userName : username,
+                        gameName : gamename,
+                        moneySpent : moneyspent
                     },
                     success: function (response){
                         $("#result").empty();
