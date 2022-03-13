@@ -26,7 +26,7 @@
                     }),
                     success: function (response){
                         $("#result").empty();
-                        console.log(response);
+                        $("#result").add(response);
                     }
                 })
             }
@@ -39,6 +39,8 @@
         moneySpent <input type="number" id="moneySpent">
         <button onclick="gatcha()">submit</button>
 
-        <div id="result"></div>
+        <div id="result">
+            
+        </div>
     </body>
 </html>
