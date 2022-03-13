@@ -37,6 +37,7 @@
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/update",
+                    contentType : "application/json",
                     data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
@@ -55,6 +56,7 @@
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/exchange",
+                    contentType : "application/json",
                     data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
