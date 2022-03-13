@@ -110,9 +110,9 @@
                     }),
                     success : function(response){
                         console.log(response)
-                        for (var game in response){
-                            console.log(game)
-                        }
+                        array.forEach(element => {
+                            console.log(element)
+                        });
                     }
                 })
             }
