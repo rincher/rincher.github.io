@@ -66,9 +66,10 @@
                         query : query
                     }),
                     success : function (response){
-                        let result = response;
+                        let product_name = response[0][0];
+                        let amount = response[0][1];
                         console.log(response)
-                        let temp_html = `<p> ${result} </p>`;
+                        let temp_html = `<p> ${product_name} : "${amount}" </p>`;
                         $('#result').append(temp_html);
                     }
                 })
