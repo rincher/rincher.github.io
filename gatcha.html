@@ -26,7 +26,7 @@
                     }),
                     success: function (response){
                         $("#result").empty();
-                        $("#result").add(response);
+                        $("#test").add(response);
                     }
                 })
             }
@@ -40,6 +40,7 @@
         <button onclick="gatcha()">submit</button>
 
         <div id="result">
+            <p id="test"></p>
             
         </div>
     </body>
