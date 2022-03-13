@@ -69,10 +69,12 @@
                         query : query
                     }),
                     success : function (response){
-                        let product_name = response;
                         console.log(response)
-                        let temp_html = `<p> ${product_name}</p>`;
-                        $('#result').append(temp_html);
+                        
+                        for (const [key,value] of Object.entries(response)){
+                            let temp_html = `<p> ${key} : ${value} </p>`;
+                            $('#result').append(temp_html);
+                        }    
                     }
                 })
             }
