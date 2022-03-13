@@ -98,6 +98,22 @@
                     }
                 })
             }
+
+            function getGameList(){
+                let username = $("#userName").val()
+                $.ajax({
+                    type : "POST",
+                    url : "http://localhost:8080/gatcha/gameList",
+                    data : JSON.stringify({
+                        userName : username
+                    }),
+                    success : function(response){
+                        for (var game in response){
+                            console.log(game)
+                        }
+                    }
+                })
+            }
         </script>
     </head>
     <body>
