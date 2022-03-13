@@ -83,7 +83,7 @@
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/total",
-                    data : Json.stringify({
+                    data : JSON.stringify({
                         userName : username
                     }),
                     success : function (response){
