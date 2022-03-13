@@ -26,7 +26,7 @@
                     success: function (response){
                         let result = response;
                         console.log(response)
-                        let temp_html = "<p> ${result}</p>";
+                        let temp_html = `<p> ${result}</p>`;
                         $('#result').append(temp_html);
                     }
                 })
