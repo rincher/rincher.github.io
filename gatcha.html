@@ -36,6 +36,7 @@
             function updateGatcha(){
                 $.ajax({
                     type : "POST",
+                    url : "http://localhost:8080/gatcha/update",
                     data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
@@ -53,6 +54,7 @@
             function queryGatcha(){
                 $.ajax({
                     type : "POST",
+                    url : "http://localhost:8080/gatcha/exchange",
                     data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
