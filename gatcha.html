@@ -11,6 +11,7 @@
         ></script>
         <script>
             function newGatcha(){
+                $("#result").empty();
                 let username = $("#userName").val()
                 let gamename = $("#gameName").val()
                 let moneySpent = $('#moneySpent').val()
@@ -33,6 +34,7 @@
             }
 
             function updateGatcha(){
+                $("#result").empty();
                 let username = $("#userName").val()
                 let gamename = $("#gameName").val()
                 let moneySpent = $('#moneySpent').val()
@@ -55,6 +57,7 @@
             }
 
             function queryGatcha(){
+                $("#result").empty();
                 let username = $("#userName").val()
                 let query = $("#query").val()
                 $.ajax({
@@ -66,10 +69,28 @@
                         query : query
                     }),
                     success : function (response){
-                        let product_name = response[0];
+                        let product_name = response;
                         console.log(response)
                         let temp_html = `<p> ${product_name}</p>`;
                         $('#result').append(temp_html);
+                    }
+                })
+            }
+
+            function getTotal(){
+                $("#result").empty();
+                let username = $("#userName").val()
+                $.ajax({
+                    type : "POST",
+                    url : "http://localhost:8080/gatcha/total",
+                    data : Json.stringify({
+                        userName : username
+                    }),
+                    success : function (response){
+                        let totalPrice = response;
+                        console.log(response);
+                        let temp_html = `<p> ${totalPrice} </p>`;
+                        $("#result").append(temp_html);
                     }
                 })
             }
