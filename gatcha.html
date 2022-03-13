@@ -106,7 +106,7 @@
                     }),
                     success : function(response){
                         response.forEach(element => {
-                            let temp_html = `<p>"${element}</p>`
+                            let temp_html = `<p>${element}</p>`
                             $("#result").append(temp_html)
                         });
                     }
@@ -116,7 +116,7 @@
     </head>
     <body>
         <div>
-            <h1> New Gatcha </h1>
+            <h1> Gatcha Service </h1>
             userName <input type="text" id="userName">
             gameName <input type="text" id="gameName">
             moneySpent <input type="number" id="moneySpent" placeholder="1000 = 1">
