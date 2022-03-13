@@ -88,7 +88,7 @@
                         userName : username
                     }),
                     success : function (response){
-                        let totalPrice = response;
+                        let totalPrice = response.toLocaleString();
                         console.log(response);
                         let temp_html = `<p> ${totalPrice} </p>`;
                         $("#result").append(temp_html);
