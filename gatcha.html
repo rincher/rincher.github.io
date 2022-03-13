@@ -24,9 +24,10 @@
                         moneySpent : moneyspent
                     }),
                     success: function (response){
-                        $("#result").empty();
+                        let result = response;
                         console.log(response)
-                        $("#test").append(response);
+                        let temp_html = "<p> ${result}</p>";
+                        $("#result").append(temp_html);
                     }
                 })
             }
