@@ -10,10 +10,11 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            function gatcha(){
-                let username = $("#userName").val()
-                let gamename = $("#gameName").val()
-                let moneyspent = $("#moneySpent").val()
+            var username = $("#userName").val()
+            var gamename = $("#gameName").val()
+            var moneySpent = $('#moneySpent').val()
+            var query = $("#query").val()
+            function newGatcha(){
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/new",
@@ -31,14 +32,52 @@
                     }
                 })
             }
+
+            function updateGatcha(){
+                $.ajax({
+                    type : "POST",
+                    data : JSON.stringify({
+                        userName : username,
+                        gameName : gamename,
+                        moneySpent : moneySpent
+                    }),
+                    success : function(response){
+                        let result = response;
+                        console.log(response)
+                        let temp_html = `<p> ${result} </p>`;
+                        $('#result').append(temp_html);
+                    }
+                })
+            }
+
+            function queryGatcha(){
+                $.ajax({
+                    type : "POST",
+                    data : JSON.stringify({
+                        userName : username,
+                        gameName : gamename,
+                        query : query
+                    }),
+                    success : function (response){
+                        let result = response;
+                        console.log(response)
+                        let temp_html = `<p> ${result} </p>`;
+                        $('#result').append(temp_html);
+                    }
+                })
+            }
         </script>
     </head>
     <body>
-        <h1> test </h1>
-        userName <input type="text" id="userName">
-        gameName <input type="text" id="gameName">
-        moneySpent <input type="number" id="moneySpent">
-        <button onclick="gatcha()">submit</button>
+        <div>
+            <h1> New Gatcha </h1>
+            userName <input type="text" id="userName">
+            gameName <input type="text" id="gameName">
+            moneySpent <input type="number" id="moneySpent">
+            Query <input type="text" id="query">
+        <button onclick="newGatcha()">new</button>
+        <button onclick="updateGatcha()">update</button>
+        <button onclick="queryGatcha()">query</button>
 
         <div id="result">
             <p id="test"></p>
