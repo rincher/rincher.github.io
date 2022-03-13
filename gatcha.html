@@ -10,11 +10,10 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            var username = $("#userName").val()
-            var gamename = $("#gameName").val()
-            var moneySpent = $('#moneySpent').val()
-            var query = $("#query").val()
             function newGatcha(){
+                let username = $("#userName").val()
+                let gamename = $("#gameName").val()
+                let moneySpent = $('#moneySpent').val()
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/new",
@@ -34,6 +33,9 @@
             }
 
             function updateGatcha(){
+                let username = $("#userName").val()
+                let gamename = $("#gameName").val()
+                let moneySpent = $('#moneySpent').val()
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/update",
@@ -53,13 +55,14 @@
             }
 
             function queryGatcha(){
+                let username = $("#userName").val()
+                let query = $("#query").val()
                 $.ajax({
                     type : "POST",
                     url : "http://localhost:8080/gatcha/exchange",
                     contentType : "application/json",
                     data : JSON.stringify({
                         userName : username,
-                        gameName : gamename,
                         query : query
                     }),
                     success : function (response){
