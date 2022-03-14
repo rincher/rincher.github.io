@@ -31,7 +31,7 @@
                         $('#result').append(temp_html);
                     })
                     .fail(function(response){
-                        alert("input userName, gameName and moneySpent")
+                        alert("사용자 이름과, 게임 이름 그리고 소비하신 금액을 입력해주세요")
                     })
             }
 
@@ -55,7 +55,7 @@
                         $('#result').append(temp_html);
                     })
                     .fail(function(response){
-                        alert("input userName, gameName and moneySpent")
+                        alert("사용자 이름과, 게임 이름 그리고 소비하신 금액을 입력해주세요")
                     })
             }
 
@@ -79,7 +79,7 @@
                         }    
                     })
                     .fail (function(response) {
-                        alert("please input userName and Query")
+                        alert("사용자 이름과 비교할 대상을 입력해주세요")
                     })
             }
 
@@ -99,7 +99,7 @@
                         $("#result").append(temp_html);
                     })
                     .fail (function (response){
-                        alert("please input userName")
+                        alert("사용자 이름을 입력해주세요")
                     })                
             }
 
@@ -119,6 +119,9 @@
                             $("#result").append(temp_html)
                         });
                     })
+                .fail(function(response) {
+                    alert("사용자 이름을 입력해주세요")
+                })
             }
         </script>
     </head>
