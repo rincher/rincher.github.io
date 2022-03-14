@@ -23,14 +23,16 @@
                     data : JSON.stringify({
                         userName : username,
                         gameName : gamename,
-                        moneySpent : moneyspent
-                    }),
-                    success: function (response){
+                        moneySpent : moneySpent
+                    })})
+                    .done(function(response){
                         let result = response;
-                        let temp_html = `<p> ${result}</p>`;
+                        let temp_html = `<p> ${result} </p>`;
                         $('#result').append(temp_html);
-                    }
-                })
+                    })
+                    .fail(function(response){
+                        alert("input userName, gameName and moneySpent")
+                    })
             }
 
             function updateGatcha(){
@@ -46,13 +48,15 @@
                         userName : username,
                         gameName : gamename,
                         moneySpent : moneySpent
-                    }),
-                    success : function(response){
+                    })})
+                    .done(function(response){
                         let result = response;
                         let temp_html = `<p> ${result} </p>`;
                         $('#result').append(temp_html);
-                    }
-                })
+                    })
+                    .fail(function(response){
+                        alert("input userName, gameName and moneySpent")
+                    })
             }
 
             function queryGatcha(){
@@ -67,14 +71,16 @@
                     data : JSON.stringify({
                         userName : username,
                         query : query
-                    }),
-                    success : function (response){
+                    })})
+                    .done (function (response){
                         for (const [key,value] of Object.entries(response)){
                             let temp_html = `<p> ${key} : ${value} </p>`;
                             $('#result').append(temp_html);
                         }    
-                    }
-                })
+                    })
+                    .fail (function(response) {
+                        alert("please input userName and Query")
+                    })
             }
 
             function getTotal(){
@@ -86,13 +92,15 @@
                     contentType : "application/json",
                     data : JSON.stringify({
                         userName : username
-                    }),
-                    success : function (response){
+                    })})
+                    .done (function (response){
                         let totalPrice = response.toLocaleString();
-                        let temp_html = `<p> ${totalPrice} </p>`;
+                        let temp_html = `<p> ${totalPrice} 원 </p>`;
                         $("#result").append(temp_html);
-                    }
-                })
+                    })
+                    .fail (function (response){
+                        alert("please input userName")
+                    })                
             }
 
             function getGameList(){
@@ -111,18 +119,15 @@
                             $("#result").append(temp_html)
                         });
                     })
-                .fail(function (response){
-                    alert("please input username and query")
-                })
             }
         </script>
     </head>
     <body>
         <div>
             <h1> Gatcha Service </h1>
-            userName <input type="text" id="userName">
-            gameName <input type="text" id="gameName">
-            moneySpent <input type="number" id="moneySpent">
+            userName <input type="text" id="userName" placeholder="사용자 이름을 입력해주세요">
+            gameName <input type="text" id="gameName" placeholder="게임 이름을 입력해주세요">
+            moneySpent <input type="number" id="moneySpent" placeholder="사용하신 금액을 입력해주세요">
             Query <input type="text" id="query">
         <button onclick="newGatcha()" class="btn btn-primary">new</button>
         <button onclick="updateGatcha()" class="btn btn-primary">update</button>
