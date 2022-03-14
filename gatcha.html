@@ -104,13 +104,15 @@
                     contentType : "application/json",
                     data : JSON.stringify({
                         userName : username
-                    }),
-                    success : function(response){
+                    })})
+                .done( function (response){
                         response.forEach(element => {
                             let temp_html = `<p>${element}</p>`
                             $("#result").append(temp_html)
                         });
-                    }
+                    })
+                .fail(function (response){
+                    alert("please input username and query")
                 })
             }
         </script>
